@@ -1,0 +1,58 @@
+{
+    "name": "plugrbase/laravel-twitter-api",
+    "description": "Twitter API wrapper for Laravel 8.x|9.x",
+    "keywords": [
+        "plugrbase",
+        "laravel-twitter-api"
+    ],
+    "homepage": "https://github.com/plugrbase/laravel-twitter-api",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Julien Legrand",
+            "email": "julien@nomala.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.4|^8.0",
+        "guzzlehttp/guzzle": "^7.4",
+        "guzzlehttp/oauth-subscriber": "^0.6.0",
+        "illuminate/support": "^8.0",
+        "stolt/json-lines": "^2.1"
+    },
+    "require-dev": {
+        "nunomaduro/phpinsights": "^2.1",
+        "orchestra/testbench": "^6.24",
+        "phpunit/phpunit": "^9.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Plugrbase\\TwitterApi\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Plugrbase\\TwitterApi\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Plugrbase\\TwitterApi\\TwitterApiServiceProvider"
+            ],
+            "aliases": {
+                "TwitterApi": "Plugrbase\\TwitterApi\\TwitterApiFacade"
+            }
+        }
+    }
+}
