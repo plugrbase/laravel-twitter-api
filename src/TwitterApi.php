@@ -42,8 +42,26 @@ class TwitterApi
             $this->bearerToken = config('twitter-api.api_bearer_token');
         }
 
+        if (config()->has('twitter-api.api_consumer_key') && config('twitter-api.api_consumer_key') != '') {
+            $this->oAuthCredentials['consumer_key'] = config('twitter-api.api_consumer_key');
+        }
+
+        if (config()->has('twitter-api.api_consumer_key_secret') && config('twitter-api.api_consumer_key_secret') != '') {
+            $this->oAuthCredentials['consumer_secret'] = config('twitter-api.api_consumer_key_secret');
+        }
+
+        if (config()->has('twitter-api.api_access_token') && config('twitter-api.api_access_token') != '') {
+            $this->oAuthCredentials['token'] = config('twitter-api.api_access_token');
+        }
+
+        if (config()->has('twitter-api.api_token_secret') && config('twitter-api.api_token_secret') != '') {
+            $this->oAuthCredentials['token_secret'] = config('twitter-api.api_token_secret');
+        }
+
         if (count($oAuthCredentials)) {
-            $this->oAuthCredentials = $oAuthCredentials;
+            foreach ($oAuthCredentials as $key => $value) {
+                $this->oAuthCredentials[$key] = $value;
+            }
         }
 
         if (config()->has('twitter-api.api_url') && $this->bearerToken != '') {
@@ -79,6 +97,16 @@ class TwitterApi
         $this->guzzle = new GuzzleClient($config);
 
         return $this;
+    }
+
+    /**
+     * Get credentials.
+     *
+     * @return object
+     */
+    public function getOAuthCredentials()
+    {
+        return $this->oAuthCredentials;
     }
 
     /**
