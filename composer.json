@@ -18,9 +18,7 @@
     "require": {
         "php": "^7.4|^8.0",
         "guzzlehttp/guzzle": "^7.4",
-        "guzzlehttp/oauth-subscriber": "^0.6.0",
-        "illuminate/support": "^8.0",
-        "stolt/json-lines": "^2.1"
+        "guzzlehttp/oauth-subscriber": "^0.6.0"
     },
     "require-dev": {
         "nunomaduro/phpinsights": "^2.1",
