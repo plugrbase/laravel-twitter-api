@@ -12,7 +12,9 @@ composer require plugrbase/laravel-twitter-api
 
 Optionally publish the config file of this package:
 
+```bash
 php artisan vendor:publish --provider="Plugrbase\TwitterApi\TwitterApiServiceProvider"
+```
 
 Add the following environment variables. The only mandatory variable is the bearer.
 
