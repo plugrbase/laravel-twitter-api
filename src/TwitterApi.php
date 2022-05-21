@@ -15,7 +15,7 @@ class TwitterApi
     /**
      * The bearer token.
      */
-    private string $bearerToken;
+    private string|null $bearerToken;
 
     /**
      * The oauth credentials.
@@ -34,13 +34,7 @@ class TwitterApi
      */
     public function __construct(string $bearerToken = null, $oAuthCredentials = [])
     {
-        if (! is_null($bearerToken)) {
-            $this->bearerToken = $bearerToken;
-        }
-        
-        if (is_null($bearerToken) && config()->has('twitter-api.api_bearer_token')) {
-            $this->bearerToken = config('twitter-api.api_bearer_token');
-        }
+        $this->bearerToken = $bearerToken;
 
         if (config()->has('twitter-api.api_consumer_key') && config('twitter-api.api_consumer_key') != '') {
             $this->oAuthCredentials['consumer_key'] = config('twitter-api.api_consumer_key');

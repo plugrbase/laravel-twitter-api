@@ -16,7 +16,7 @@ Optionally publish the config file of this package:
 php artisan vendor:publish --provider="Plugrbase\TwitterApi\TwitterApiServiceProvider"
 ```
 
-Add the following environment variables. The only mandatory variable is the bearer.
+Add the following environment variables.
 
 ```
 TWITTER_API_CONSUMER_KEY=
@@ -31,7 +31,7 @@ TWITTER_API_URL=
 
 ### Twitter API v2
 
-* `$twitterApi = new TwitterApi($bearerToken, $oAuthCredentials);` - Create a new instance. The $bearerToken and the $oAuthCredentials are optional.
+* `$twitterApi = new TwitterApi($bearerToken, $oAuthCredentials);` - Create a new instance. If the oauth credentials are not passed, then the application config variables we'll be used instead (if provided).
 
 #### Tweet
 
