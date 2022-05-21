@@ -64,7 +64,7 @@ class TwitterApi
             }
         }
 
-        if (config()->has('twitter-api.api_url') && $this->bearerToken != '') {
+        if (config()->has('twitter-api.api_url')) {
             $this->setClient(config('twitter-api.api_url'), $this->bearerToken, $this->oAuthCredentials);
         }
     }
@@ -74,14 +74,13 @@ class TwitterApi
      *
      * @return object
      */
-    public function setClient(string $uri, string $bearerToken, $oAuthCredentials = [])
+    public function setClient(string $uri, $bearerToken, $oAuthCredentials = [])
     {
-        $config = [
-            'base_uri' => $uri,
-            'headers' => [
-                'Authorization' => 'Bearer ' . $bearerToken,
-            ]
-        ];
+        $config = ['base_uri' => $uri];
+
+        if ($bearerToken != null) {
+            $config['headers'] = ['Authorization' => 'Bearer ' . $bearerToken];
+        }
 
         if (count($oAuthCredentials)) {
             $stack = HandlerStack::create();
