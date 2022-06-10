@@ -25,3 +25,4 @@ composer.phar
 .env.production
 .env.acceptance
 database/schema/
+composer.lock
