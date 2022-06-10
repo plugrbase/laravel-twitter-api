@@ -87,7 +87,7 @@ class User extends ApiEntity
      *
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
-    public function getFollowers(int $id, array $parameters = [])
+    public function getFollowers(string $id, array $parameters = [])
     {
         return json_decode(
             $this->twitterApi->get('users/' . $id . '/followers', ['query' => $parameters])
