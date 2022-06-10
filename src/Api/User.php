@@ -7,6 +7,8 @@ class User extends ApiEntity
     /**
      * Get user.
      *
+     * @param string $id
+     * @param array $parameters
      * @return object
      *
      * @throws \GuzzleHttp\Exception\GuzzleException
@@ -23,6 +25,8 @@ class User extends ApiEntity
     /**
      * Get many users.
      *
+     * @param array $ids
+     * @param array $parameters
      * @return object
      *
      * @throws \GuzzleHttp\Exception\GuzzleException
@@ -57,6 +61,8 @@ class User extends ApiEntity
     /**
      * Get many users by username.
      *
+     * @param array $usernames
+     * @param array $parameters
      * @return object
      *
      * @throws \GuzzleHttp\Exception\GuzzleException
@@ -75,6 +81,8 @@ class User extends ApiEntity
     /**
      * Get Followers of user ID.
      *
+     * @param string $id
+     * @param array $parameters
      * @return object
      *
      * @throws \GuzzleHttp\Exception\GuzzleException
