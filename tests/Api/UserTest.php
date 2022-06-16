@@ -63,4 +63,12 @@ class UserTest extends TestCase
         $this->assertNotEmpty($followers);
         $this->assertCount(5, $followers->data);
     }
+
+    public function test_get_tweets_should_return_data()
+    {
+        $tweets = $this->twitterApi()->user()->getTweets(36441453, ['max_results' => 5]);
+
+        $this->assertNotEmpty($tweets);
+        $this->assertCount(5, $tweets->data);
+    }
 }

@@ -49,6 +49,8 @@ TWITTER_API_URL=
 * `$twitterApi->user()->getManyByUsername([$username1, $username2])` - Return multiple users by username.
 * `$twitterApi->user()->getFollowers($userId)` - Return all the followers of a user.
 * `$twitterApi->user()->getFollowers($userId, ['max_results' => 5])` - Return the five earliest followers of a user.
+* `$twitterApi->user()->getTweets($userId)` - Return all the tweets of a user. By default, the most recent ten Tweets are returned per request. Using pagination, the most recent 3,200 Tweets can be retrieved.
+* `$twitterApi->user()->getTweets($userId, ['max_results' => 5])` - Return the five earliest tweets of a user.
 
 ### Testing
 

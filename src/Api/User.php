@@ -95,4 +95,22 @@ class User extends ApiEntity
                 ->getContents()
         );
     }
+    
+    /**
+     * Get Tweets of user ID.
+     *
+     * @param string $id
+     * @param array $parameters
+     * @return object
+     *
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     */
+    public function getTweets(string $id, array $parameters = [])
+    {
+        return json_decode(
+            $this->twitterApi->get('users/' . $id . '/tweets', ['query' => $parameters])
+                ->getBody()
+                ->getContents()
+        );
+    }
 }
