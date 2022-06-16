@@ -47,8 +47,8 @@ TWITTER_API_URL=
 * `$twitterApi->user()->getMany([$userId1, $userId2])` - Return multiple users.
 * `$twitterApi->user()->getByUsername($username)` - Return a single user by username.
 * `$twitterApi->user()->getManyByUsername([$username1, $username2])` - Return multiple users by username.
-* `$twitterApi->user()->getFollowers($userId)` - Return all the followders of a user.
-* `$twitterApi->user()->getFollowers($userId, ['max_results' => 5])` - Return the five earliest followers  of a user.
+* `$twitterApi->user()->getFollowers($userId)` - Return all the followers of a user.
+* `$twitterApi->user()->getFollowers($userId, ['max_results' => 5])` - Return the five earliest followers of a user.
 
 ### Testing
 
